@@ -1,0 +1,11 @@
+---
+title: "Securing IoT Devices: A Guide to Application-Layer Encryption"
+date: "2026-05-15"
+tags: ['IoT', 'Security', 'ESP32']
+readingTime: "5 min"
+---
+
+IoT devices are notoriously vulnerable. In this post, I discuss how to implement application-layer encryption (AES-128) on ESP32 devices to secure BLE communications, based on my recent project.
+
+### Why Application-Layer?
+Transport layer security is often not enough for edge devices. Application-layer encryption guarantees end-to-end security, even if the intermediate nodes are compromised.
