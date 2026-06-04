@@ -11,5 +11,5 @@ export default function Home() {
     )
     .slice(0, 2);
 
-  return <HomeClient posts={posts} />;
+  return <HomeClient posts={posts as any} />;
 }

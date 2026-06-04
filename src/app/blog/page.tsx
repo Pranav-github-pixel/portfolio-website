@@ -8,5 +8,5 @@ export default function Blog() {
       new Date(a.frontmatter.date).getTime()
   );
 
-  return <BlogClient posts={posts} />;
+  return <BlogClient posts={posts as any} />;
 }
