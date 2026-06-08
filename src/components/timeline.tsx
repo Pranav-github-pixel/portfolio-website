@@ -54,18 +54,17 @@ export default function Timeline({ items }: TimelineProps) {
 
               <ScrollReveal direction={isLeft ? "left" : "right"} delay={0.1}>
                 <div
-                  className={`pl-20 md:pl-0 md:w-[45%] ${
-                    isLeft
-                      ? "md:mr-auto md:pr-16 md:text-right"
-                      : "md:ml-auto md:pl-16 md:text-left"
-                  }`}
+                  className={`pl-20 md:pl-0 md:w-[45%] ${isLeft
+                    ? "md:mr-auto md:pr-16 md:text-right"
+                    : "md:ml-auto md:pl-16 md:text-left"
+                    }`}
                 >
                   <div className="card">
                     <span className="section-label block mb-3">{item.year}</span>
                     <h3
                       className="text-xl md:text-2xl mb-2"
                       style={{
-                        fontFamily: "var(--font-dm-sans)",
+                        fontFamily: "var(--font-jetbrains-mono)",
                         fontWeight: 700,
                         color: "var(--color-text-primary)",
                         lineHeight: 1.2,
@@ -76,7 +75,7 @@ export default function Timeline({ items }: TimelineProps) {
                     {item.subtitle && (
                       <p
                         className="text-sm mb-3"
-                        style={{ color: "var(--color-accent)", fontFamily: "var(--font-dm-sans)", fontWeight: 500 }}
+                        style={{ color: "var(--color-accent)", fontFamily: "var(--font-jetbrains-mono)", fontWeight: 500 }}
                       >
                         {item.subtitle}
                       </p>

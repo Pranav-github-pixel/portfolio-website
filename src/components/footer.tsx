@@ -48,7 +48,7 @@ export default function Footer() {
 
           <div className="flex items-center gap-5">
             <a
-              href="https://github.com/pranav"
+              href="https://github.com/Pranav-github-pixel"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors"
@@ -59,7 +59,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://linkedin.com/in/pranav"
+              href="https://www.linkedin.com/in/pranavkhadse/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors"
@@ -70,6 +70,18 @@ export default function Footer() {
                 <circle cx="4" cy="4" r="2" />
               </svg>
             </a>
+
+            <a
+              href="https://www.behance.net/pranavkhadse"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.226-2.477-2.226-1.467 0-2.274.891-2.488 2.226zm-9.562 6h-6.478v-14h6.77c3.125 0 4.542 1.39 4.542 3.593 0 1.272-.67 2.378-2.14 2.859 1.834.456 2.652 1.764 2.652 3.565 0 2.272-1.726 3.983-5.346 3.983zm-3.528-6.195v3.407h2.247c1.394 0 2.308-.432 2.308-1.733 0-1.405-.989-1.674-2.257-1.674h-2.298zm0-5.069v3.081h2.09c1.077 0 1.94-.356 1.94-1.541 0-1.157-.803-1.54-1.921-1.54h-2.109z" />
+              </svg>
+            </a>
+
             <a
               href="mailto:psjkhadse@gmail.com"
               className="text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors"
@@ -87,7 +99,7 @@ export default function Footer() {
             className="text-xs"
             style={{
               color: "var(--color-text-secondary)",
-              fontFamily: "var(--font-dm-sans)",
+              fontFamily: "var(--font-jetbrains-mono)",
               fontWeight: 500,
               letterSpacing: "0.05em",
             }}
@@ -95,7 +107,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Pranav Khadse
           </p>
           <a
-            href="/Pranav_resume_2.pdf"
+            href="https://drive.google.com/file/d/1n0dqSGYnnfrNp6I_1NoIhueWEHSdOH7-/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-pill btn-pill-outline"

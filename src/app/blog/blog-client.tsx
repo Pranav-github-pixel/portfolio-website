@@ -52,7 +52,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
                       <h2
                         className="text-xl md:text-3xl group-hover:text-[var(--color-accent)] transition-colors"
                         style={{
-                          fontFamily: "var(--font-dm-sans)",
+                          fontFamily: "var(--font-jetbrains-mono)",
                           fontWeight: 700,
                           color: "var(--color-text-primary)",
                           lineHeight: 1.2,

@@ -150,7 +150,7 @@ export default function HomeClient({ posts }: HomeClientProps) {
       <section className="px-6 md:px-12 pt-16 pb-16 md:pt-24 md:pb-24">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
-            <p className="statement-text max-w-5xl">
+            <p className="statement-text text-6xl max-w-6xl" >
               I&apos;m an embedded systems engineer who grew up tinkering with
               microcontrollers, now building IoT solutions and cloud architectures.
               I care just as much about elegant firmware as I do about scalable
@@ -213,7 +213,7 @@ export default function HomeClient({ posts }: HomeClientProps) {
                     <h3
                       className="text-lg md:text-xl group-hover:text-[var(--color-accent)] transition-colors"
                       style={{
-                        fontFamily: "var(--font-dm-sans)",
+                        fontFamily: "var(--font-jetbrains-mono)",
                         fontWeight: 600,
                         color: "var(--color-text-primary)",
                       }}
@@ -222,7 +222,7 @@ export default function HomeClient({ posts }: HomeClientProps) {
                     </h3>
                     <span
                       className="hidden md:block text-sm opacity-0 group-hover:opacity-100 transition-opacity"
-                      style={{ color: "var(--color-accent)", fontFamily: "var(--font-dm-sans)", fontWeight: 500 }}
+                      style={{ color: "var(--color-accent)", fontFamily: "var(--font-jetbrains-mono)", fontWeight: 500 }}
                     >
                       Read →
                     </span>

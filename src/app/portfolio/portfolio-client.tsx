@@ -88,7 +88,7 @@ function ProjectCard({ project, index }: { project: MdxItem; index: number }) {
             <h3
               className="text-xl md:text-2xl mb-2"
               style={{
-                fontFamily: "var(--font-dm-sans)",
+                fontFamily: "var(--font-jetbrains-mono)",
                 fontWeight: 700,
                 color: "var(--color-text-primary)",
                 lineHeight: 1.2,
@@ -195,13 +195,21 @@ export default function PortfolioClient({
             <h1 className="section-title">Portfolio</h1>
           </motion.div>
           <motion.div
-            className="mt-10"
+            className="mt-10 flex flex-wrap gap-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
             <a href="#skills" className="btn-pill btn-pill-outline">
               Jump to Skills ↓
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1n0dqSGYnnfrNp6I_1NoIhueWEHSdOH7-/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-pill btn-pill-filled"
+            >
+              View Resume ↗
             </a>
           </motion.div>
         </div>
@@ -243,7 +251,7 @@ export default function PortfolioClient({
                     <h3
                       className="text-lg mb-3"
                       style={{
-                        fontFamily: "var(--font-dm-sans)",
+                        fontFamily: "var(--font-jetbrains-mono)",
                         fontWeight: 700,
                         color: "var(--color-text-primary)",
                         lineHeight: 1.3,
@@ -297,7 +305,7 @@ export default function PortfolioClient({
                     <h3
                       className="text-lg md:text-xl mb-1"
                       style={{
-                        fontFamily: "var(--font-dm-sans)",
+                        fontFamily: "var(--font-jetbrains-mono)",
                         fontWeight: 700,
                         color: "var(--color-text-primary)",
                       }}
@@ -306,7 +314,7 @@ export default function PortfolioClient({
                     </h3>
                     <p
                       className="text-sm mb-1"
-                      style={{ color: "var(--color-accent)", fontFamily: "var(--font-dm-sans)", fontWeight: 500 }}
+                      style={{ color: "var(--color-accent)", fontFamily: "var(--font-jetbrains-mono)", fontWeight: 500 }}
                     >
                       {cert.issuer}
                     </p>
@@ -336,7 +344,7 @@ export default function PortfolioClient({
                       <h3
                         className="text-xl md:text-2xl"
                         style={{
-                          fontFamily: "var(--font-dm-sans)",
+                          fontFamily: "var(--font-jetbrains-mono)",
                           fontWeight: 700,
                           color: "var(--color-text-primary)",
                         }}
@@ -346,7 +354,7 @@ export default function PortfolioClient({
                     </div>
                     <p
                       className="text-lg"
-                      style={{ color: "var(--color-accent)", fontFamily: "var(--font-dm-sans)", fontWeight: 700 }}
+                      style={{ color: "var(--color-accent)", fontFamily: "var(--font-jetbrains-mono)", fontWeight: 700 }}
                     >
                       {edu.score}
                     </p>

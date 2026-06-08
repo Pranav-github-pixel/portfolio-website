@@ -53,7 +53,7 @@ export default function Navigation() {
                     fontWeight: 700,
                     letterSpacing: "0.1em",
                     textTransform: "uppercase" as const,
-                    fontFamily: "var(--font-dm-sans)",
+                    fontFamily: "var(--font-jetbrains-mono)",
                     transition: "color 0.25s ease",
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "#C29A5C")}

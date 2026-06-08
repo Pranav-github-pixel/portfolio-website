@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, DM_Sans, Anton } from "next/font/google";
+import { Inter, DM_Sans, Anton, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
@@ -11,12 +11,12 @@ const inter = Inter({
   weight: ["300", "400", "500"],
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700"],
 });
+
 
 const anton = Anton({
   variable: "--font-anton",
@@ -47,7 +47,8 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${dmSans.variable} ${anton.variable}`}
+      className={`${inter.variable} ${jetbrainsMono.variable} ${anton.variable}`}
+
     >
       <body>
         <Navigation />
