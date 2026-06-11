@@ -32,30 +32,43 @@ const certifications = [
     issuer: "IBM Career Education Program (IBMCE)",
     date: "Jun 2025",
     description: "Covering Agile, CI/CD, and collaboration workflows.",
+    link: "https://courses.vit.skillsnetwork.site/certificates/e04cce08b47c4d99af7bff7fbaca84b1"
   },
 ];
 
 const education = [
   {
     level: "College",
-    degree: "B.Tech in Computer Science",
-    institution: "VIT Chennai",
+    degree: "B.Tech in Electronics and Computer Engineering (ECM)",
+    institution: "Vellore Institute of Technology, Chennai",
     score: "CGPA: 8.87",
+    gpaHighlight: "9.64, 9.49",
     highlights: ["Embedded Systems", "IoT", "Cloud Computing", "DevOps"],
+    date: "2023-2027",
   },
   {
     level: "12th",
-    board: "State Board",
+    board: "Maharashtra state board (MSBSHSE)",
     school: "Higher Secondary School",
-    score: "Percentage: 68",
+    score: "68%",
+    date: "2021-2023",
+  },
+  {
+    level: "JEE",
+    board: "Competitive Exam",
+    school: "Joint Entrance Examination",
+    score: "93.07 Percentile",
+    date: "2021-2023",
   },
   {
     level: "10th",
-    board: "State Board",
-    school: "Secondary School",
-    score: "90%+",
+    board: "Central Board of Secondary Education (CBSE)",
+    school: "Mount Carmel Convent High School",
+    score: "93.8%",
+    date: "2020-2021",
   },
 ];
+
 
 /* ============================================
    EXPANDABLE PROJECT CARD
@@ -65,7 +78,7 @@ function ProjectCard({ project, index }: { project: MdxItem; index: number }) {
   const isLeft = index % 2 === 0;
 
   return (
-    <ScrollReveal direction={isLeft ? "left" : "right"} delay={0.1}>
+    <ScrollReveal direction="up" delay={0.1}>
       <motion.div
         className="card cursor-pointer"
         onClick={() => setIsExpanded(!isExpanded)}
@@ -112,10 +125,22 @@ function ProjectCard({ project, index }: { project: MdxItem; index: number }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-pill btn-pill-outline"
-                style={{ padding: "8px 18px", fontSize: "10px" }}
+                style={{ padding: "12px 24px", fontSize: "14px" }}
                 onClick={(e) => e.stopPropagation()}
               >
                 GitHub ↗
+              </a>
+            )}
+            {project.frontmatter.live && (
+              <a
+                href={project.frontmatter.live as string}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-pill btn-pill-filled"
+                style={{ padding: "12px 24px", fontSize: "12px" }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                {(project.frontmatter.liveLabel as string) || "Live"} ↗
               </a>
             )}
             <motion.span
@@ -276,10 +301,15 @@ export default function PortfolioClient({
       <section id="skills" className="px-6 md:px-12 border-t border-[var(--color-border)] py-24 md:py-32">
         <div className="max-w-7xl mx-auto">
           <SectionHeading label="Skills" title="Capabilities" number="04" />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-14">
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-10 md:gap-14">
             {Object.entries(skills).map(([category, items], catIndex) => (
-              <ScrollReveal key={category} delay={catIndex * 0.08}>
-                <div className="card">
+              <ScrollReveal
+                key={category}
+                delay={catIndex * 0.08}
+                className="break-inside-avoid mb-10 md:mb-14"
+              >
+                <div className="card h-full">
+
                   <h3 className="skill-category-title">{category}</h3>
                   <div className="flex flex-wrap gap-2">
                     {items.map((skill) => (
@@ -322,7 +352,21 @@ export default function PortfolioClient({
                       {cert.description}
                     </p>
                   </div>
-                  <span className="section-label flex-shrink-0">{cert.date}</span>
+                  {/* Added a container for the date and the new button */}
+                  <div className="flex items-center gap-4 flex-shrink-0 mt-4 md:mt-0">
+                    <span className="section-label">{cert.date}</span>
+                    {cert.link && (
+                      <a
+                        href={cert.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-pill btn-pill-outline"
+                        style={{ padding: "12px 24px", fontSize: "13px" }}
+                      >
+                        Credential ↗
+                      </a>
+                    )}
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
@@ -334,44 +378,67 @@ export default function PortfolioClient({
       <section className="px-6 md:px-12 border-t border-[var(--color-border)] py-24 md:py-32">
         <div className="max-w-7xl mx-auto">
           <SectionHeading label="Education" title="Learning" number="06" />
-          <div className="space-y-6">
-            {education.map((edu, i) => (
-              <ScrollReveal key={edu.level} delay={i * 0.1}>
-                <div className="card">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-3">
-                    <div>
-                      <span className="section-label block mb-2">{edu.level}</span>
-                      <h3
-                        className="text-xl md:text-2xl"
-                        style={{
-                          fontFamily: "var(--font-jetbrains-mono)",
-                          fontWeight: 700,
-                          color: "var(--color-text-primary)",
-                        }}
-                      >
-                        {edu.degree || edu.board}
-                      </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {education.map((edu, i) => {
+              // Automatically check if any OTHER education item shares this exact date
+              const isInterlinked = education.some((otherEdu, otherIndex) =>
+                otherIndex !== i && edu.date && otherEdu.date === edu.date
+              );
+              return (
+                <ScrollReveal
+                  key={edu.level}
+                  delay={i * 0.1}
+                  className={isInterlinked ? "md:col-span-1" : "md:col-span-2"}
+                >
+                  <div className="card h-full">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-3">
+                      <div>
+                        <span className="section-label block mb-2">
+                          {edu.level}
+                          {edu.date && <span className="text-[var(--color-text-secondary)] ml-2"> • {edu.date}</span>}
+                        </span>
+                        <h3
+                          className="text-xl md:text-2xl"
+                          style={{
+                            fontFamily: "var(--font-jetbrains-mono)",
+                            fontWeight: 700,
+                            color: "var(--color-text-primary)",
+                          }}
+                        >
+                          {edu.degree || edu.board}
+                        </h3>
+                      </div>
+                      <div className="md:text-right">
+                        <p
+                          className="text-lg"
+                          style={{ color: "var(--color-accent)", fontFamily: "var(--font-jetbrains-mono)", fontWeight: 700 }}
+                        >
+                          {edu.score}
+                        </p>
+                        {edu.gpaHighlight && (
+                          <p
+                            className="text-[15px] mt-1 tracking-wider"
+                            style={{ color: "var(--color-text-highlight)", fontWeight: 500, fontFamily: "var(--font-jetbrains-mono)" }}
+                          >
+                            [GPA Highlights: {edu.gpaHighlight}]
+                          </p>
+                        )}
+                      </div>
                     </div>
-                    <p
-                      className="text-lg"
-                      style={{ color: "var(--color-accent)", fontFamily: "var(--font-jetbrains-mono)", fontWeight: 700 }}
-                    >
-                      {edu.score}
+                    <p className="text-sm" style={{ color: "var(--color-text-secondary)", fontWeight: 300 }}>
+                      {edu.institution || edu.school}
                     </p>
+                    {edu.highlights && (
+                      <div className="flex flex-wrap gap-2 mt-4">
+                        {edu.highlights.map((h) => (
+                          <span key={h} className="tag">{h}</span>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                  <p className="text-sm" style={{ color: "var(--color-text-secondary)", fontWeight: 300 }}>
-                    {edu.institution || edu.school}
-                  </p>
-                  {edu.highlights && (
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      {edu.highlights.map((h) => (
-                        <span key={h} className="tag">{h}</span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </ScrollReveal>
-            ))}
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>

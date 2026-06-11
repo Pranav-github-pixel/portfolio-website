@@ -35,7 +35,7 @@ export default function Timeline({ items }: TimelineProps) {
         style={{ height: lineHeight }}
       />
 
-      <div className="space-y-20 md:space-y-28">
+      <div className="space-y-16 md:space-y-20">
         {items.map((item, index) => {
           const isLeft = index % 2 === 0;
 
