@@ -46,7 +46,7 @@ export default function HomeClient({ posts }: HomeClientProps) {
               >
                 <div className="w-fit mx-auto">
                   <h1 className="hero-name">
-                    <span className="block" style={{ color: "#684c45ff" }}>
+                    <span className="block" style={{ color: "#8c653b" }}>
                       {"Pranav".split("").map((char, index) => (
                         <motion.span
                           key={`first-${index}`}
@@ -84,8 +84,7 @@ export default function HomeClient({ posts }: HomeClientProps) {
                       show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
                     }}
                   >
-                    Building systems that bridge hardware and software,
-                    Final-year student focused on software development, embedded systems, and lifelong learning.
+                    Driven by curiosity, Final-year student focused on software development, embedded systems, and lifelong learning.
                   </motion.p>
                 </div>
               </motion.div>
@@ -98,7 +97,7 @@ export default function HomeClient({ posts }: HomeClientProps) {
                 transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.4, 0.25, 1] }}
               >
                 <img
-                  src="/hero-image.jpg"
+                  src="/TrueEngineer.jpg"
                   alt="Pranav Khadse"
                   className="w-full h-full object-cover"
                   style={{ minHeight: "400px" }}
