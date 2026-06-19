@@ -46,7 +46,7 @@ export default function HomeClient({ posts }: HomeClientProps) {
               >
                 <div className="w-fit mx-auto">
                   <h1 className="hero-name">
-                    <span className="block" style={{ color: "#8c653b" }}>
+                    <span className="block" style={{ color: "#684c45" }}>
                       {"Pranav".split("").map((char, index) => (
                         <motion.span
                           key={`first-${index}`}
@@ -97,7 +97,7 @@ export default function HomeClient({ posts }: HomeClientProps) {
                 transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.4, 0.25, 1] }}
               >
                 <img
-                  src="/TrueEngineer.jpg"
+                  src="/hero-image.jpg"
                   alt="Pranav Khadse"
                   className="w-full h-full object-cover"
                   style={{ minHeight: "400px" }}
